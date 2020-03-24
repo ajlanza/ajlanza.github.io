@@ -1,4 +1,50 @@
 * {
     box-sizing: border-box;
+}
+body, html {
+    width:100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.banner, .score, main {
     text-align: center;
+}
+.insertQuestion {
+    border: orange, 2px, solid;
+}
+header {
+    color: white;
+    background-color: black;
+    opacity: .8; 
+}
+form {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    opacity: .8;
+    width: 300px;
+    text-align: center;
+    justify-content: center;
+}
+.stained {
+    background-image: url(pics/stained.jpg);
+}
+
+.broken {
+    background-image: url(pics/broken.jpg);
+}
+
+.building {
+    background-image: url(pics/building.jpg);
+}
+li, ul {
+    text-align: left;
+    text-decoration: none;
+    list-style: none;
 }

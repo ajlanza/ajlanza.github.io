@@ -6,14 +6,25 @@
     <link rel= "stylesheet" type="text/css" href="style.css">
     <title>Glass Quiz</title>
 </head>
-<body>
+<body class="building">
     <header>
         <h1 class ="banner">Glass Quiz</h1>
     </header>
     
     <main>
-      <h3>Are you ready to get quizzed about glass?</h3>
-      <button type="submit" class= 'submitNext'>Let's start!</button>
+        <form>
+        <h3 class="score">Are you ready to get quizzed about glass?</h3>
+      
+          <ul class="insertQuestion">   
+          </ul>
+      
+      <p class="feedback"></p>
+      <button type="button" class="start">Start</button>
+    </form>
     </main>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </body>
 </html>
