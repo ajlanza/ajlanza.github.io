@@ -1,56 +1,50 @@
-// all questions with answer choices and correct answer
+// All questions with answer choices and correct answer
 const questions = [ {
     question: 'What is glass made from?',
     possibleAnswers: ['Sand', 'Milk', 'Squirrels', 'Magnets'],
-    correctAnswer: 'A'
+    correctAnswer: 'Sand'
     },
     { question: 'What is glass formed by lightning strikes known as?',
     possibleAnswers: ['Fulgerites', 'Eons', 'Thimbles', 'Attrition'],
-    correctAnswer: 'A'
+    correctAnswer: 'Fulgerites'
     },
     { question: 'What state of matter is glass?',
     possibleAnswers: ['Delta Wave', 'Gamma Ray', 'Liquid', 'Amorphous Solid'],
-        correctAnswer: 'D'
+        correctAnswer: 'Amorphous Solid'
     },
     {  question: 'How much pressure is required to score glass?',
     possibleAnswers: ['David Bowie', '6 pounds', '2 tons', '7 atmospheres'],
-    correctAnswer: 'B'
+    correctAnswer: '6 pounds'
     },
     {  question: ' How long is it estimated that it takes a glass bottle to decompose in the environment?',
     possibleAnswers: ['1 million years', '2 miles', '3 decades', '4 calling birds'],
-    correctAnswer: 'A'
+    correctAnswer: '1 million years'
     },
 ];
+
 //Set initial variables
 let questionNumber = 0;
 let score = 0;
 
 //See what to do when our button is clicked
 $('button').on("click", (function (event) {
-    
     let classNow = $(this).attr("class");
-    console.log(classNow);
+    
     //when quiz starts show the stats and start asking questions
     if (classNow === "start") {
-        
-        //console.log("start button pushed");
         updateStats();
         populateQuestion();
         changeButton(classNow);
     }
     //when user submits an answer check to see if it's correct
     else if (classNow === "submitAnswer") {
-        //console.log("submit answer button pushed");
         checkAnswer();
-        
     }
     //when user has answered, prompt for the next question
     else if (classNow === "nextQuestion") {
-        //console.log("next question button pushed");
         questionNumber++;
         if (questionNumber > 4) {
             restartQuiz();
-
         }
         else {
         updateStats();
@@ -59,74 +53,69 @@ $('button').on("click", (function (event) {
         } 
     }
 }));
-
+  // Change the button class and text to prepare for the users next action
   function changeButton(whatClass){
     if (whatClass === "start") {
         $('button').toggleClass("start submitAnswer");
         $('button').text('Submit Answer');
       } 
     else if (whatClass === "submitAnswer"){
-        //run code to submit and check answer
-        //console.log("submitAnswer if ran");
         $('button').toggleClass("submitAnswer nextQuestion");
         $('button').text('Next Question');
     }
     else if (whatClass === "nextQuestion"){
-        //run code to get next question
-        //console.log("nextQuestion if ran");
         $('button').toggleClass("nextQuestion submitAnswer");
         $('.feedback').text("");
         $('button').text("Submit Answer")
     }
   }
 
+  // Show question with possible answers
   function populateQuestion() {
     $(".insertQuestion").html(
         `<li>${questions[questionNumber].question}</li>
-         <li><input type='radio' id='A' name='answer' value='A'>
+         <li><input type='radio' id='A' name='answer' value='${questions[questionNumber].possibleAnswers[0]}'>
          <label for="${questions[questionNumber].possibleAnswers[0]}">${questions[questionNumber].possibleAnswers[0]}</li>
-         <li><input type='radio' id='B' name='answer' value='B'>
+         <li><input type='radio' id='B' name='answer' value='${questions[questionNumber].possibleAnswers[1]}'>
          <label for="${questions[questionNumber].possibleAnswers[1]}">${questions[questionNumber].possibleAnswers[1]}</li>
-         <li><input type='radio' id='C' name='answer' value='C'>
+         <li><input type='radio' id='C' name='answer' value='${questions[questionNumber].possibleAnswers[2]}'>
          <label for="${questions[questionNumber].possibleAnswers[2]}">${questions[questionNumber].possibleAnswers[2]}</li>
-         <li><input type='radio' id='D' name='answer' value='D'>
+         <li><input type='radio' id='D' name='answer' value='${questions[questionNumber].possibleAnswers[3]}'>
          <label for="${questions[questionNumber].possibleAnswers[3]}">${questions[questionNumber].possibleAnswers[3]}</li>`);
         }
 
+  // Show user the question they are on and what their score is
   function updateStats() {
-    $(".score").text(`Question: ${questionNumber+1} of 5   Score: ${score}`);
+    $(".score").text(`Question: ${questionNumber+1} of 5; Score: ${score}`);
   }
 
   function checkAnswer(){
-    //make sure a radio button has been selected
+    //make sure an answer was selected and see if it is correct, handle score accordingly
     if ($('input[name=answer]:checked').length > 0) {    
         let selected = $('input:checked');
         let answer = selected.val();
         let correct = questions[questionNumber].correctAnswer;
-    //console.log(answer);
-    //console.log(correct);
         if (answer === correct) {
-         //console.log("You got it right!");
           score++;
-         $('.feedback').text('Correct!')
-         updateStats();
-         changeButton("submitAnswer");
-         $("body").removeClass("building broken");
-         $("body").addClass("stained");
-    }
-        else if (answer != correct) {
-            //console.log("You are incorrect.");
-         $('.feedback').text(`The correct answer is ${questions[questionNumber].correctAnswer}.`)
-         updateStats();
-         changeButton("submitAnswer");
-         $("body").removeClass("building stained");
-         $("body").addClass("broken");
+          $('.feedback').text('Correct!')
+          updateStats();
+          changeButton("submitAnswer");
+          $("body").removeClass("building broken");
+          $("body").addClass("stained");
         }
-  }
-  else {
+        else if (answer != correct) {
+          $('.feedback').text(`The correct answer is ${questions[questionNumber].correctAnswer}.`)
+          updateStats();
+          changeButton("submitAnswer");
+          $("body").removeClass("building stained");
+          $("body").addClass("broken");
+        }
+    }
+    //if an answer was not selected inform user to answer
+    else {
       alert("Please select an answer to proceed.");
     }
-  }
+ }
 
   function nextQuestion(){
       updateStats();

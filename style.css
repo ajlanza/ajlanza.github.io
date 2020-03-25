@@ -2,7 +2,8 @@
     box-sizing: border-box;
 }
 body, html {
-    width:100%;
+    font-family: "Roboto", sans-serif;
+    width: 100%;
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -10,18 +11,17 @@ body, html {
     margin: 0;
     padding: 0;
     border: 0;
-}
-
-.banner, .score, main {
-    text-align: center;
-}
-.insertQuestion {
-    border: orange, 2px, solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 header {
+    text-align: center;
     color: white;
     background-color: black;
     opacity: .8; 
+    width: 300px;
 }
 form {
     display: inline-block;
@@ -29,22 +29,21 @@ form {
     color: white;
     opacity: .8;
     width: 300px;
-    text-align: center;
-    justify-content: center;
+    text-align: center
+    }
+li, ul {
+    text-align: left;
+    list-style: none;
 }
+
+/* These are background images for aesthic purposes only. No information is being
+   conveyed so an alt tag for accesibility is not needed as it would be for an img tag.*/
 .stained {
     background-image: url(pics/stained.jpg);
 }
-
 .broken {
     background-image: url(pics/broken.jpg);
 }
-
 .building {
     background-image: url(pics/building.jpg);
-}
-li, ul {
-    text-align: left;
-    text-decoration: none;
-    list-style: none;
 }
