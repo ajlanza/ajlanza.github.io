@@ -35,7 +35,9 @@ li, ul {
     text-align: left;
     list-style: none;
 }
-
+button, input, label{
+    cursor: pointer;
+}
 /* These are background images for aesthic purposes only. No information is being
    conveyed so an alt tag for accesibility is not needed as it would be for an img tag.*/
 .stained {

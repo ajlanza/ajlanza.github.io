@@ -74,13 +74,13 @@ $('button').on("click", (function (event) {
   function populateQuestion() {
     $(".insertQuestion").html(
         `<li>${questions[questionNumber].question}</li>
-         <li><input type='radio' id='A' name='answer' value='${questions[questionNumber].possibleAnswers[0]}'>
+         <li><input type='radio' id='${questions[questionNumber].possibleAnswers[0]}' name='answer' value='${questions[questionNumber].possibleAnswers[0]}'>
          <label for="${questions[questionNumber].possibleAnswers[0]}">${questions[questionNumber].possibleAnswers[0]}</li>
-         <li><input type='radio' id='B' name='answer' value='${questions[questionNumber].possibleAnswers[1]}'>
+         <li><input type='radio' id='${questions[questionNumber].possibleAnswers[1]}' name='answer' value='${questions[questionNumber].possibleAnswers[1]}'>
          <label for="${questions[questionNumber].possibleAnswers[1]}">${questions[questionNumber].possibleAnswers[1]}</li>
-         <li><input type='radio' id='C' name='answer' value='${questions[questionNumber].possibleAnswers[2]}'>
+         <li><input type='radio' id='${questions[questionNumber].possibleAnswers[2]}' name='answer' value='${questions[questionNumber].possibleAnswers[2]}'>
          <label for="${questions[questionNumber].possibleAnswers[2]}">${questions[questionNumber].possibleAnswers[2]}</li>
-         <li><input type='radio' id='D' name='answer' value='${questions[questionNumber].possibleAnswers[3]}'>
+         <li><input type='radio' id='${questions[questionNumber].possibleAnswers[3]}' name='answer' value='${questions[questionNumber].possibleAnswers[3]}'>
          <label for="${questions[questionNumber].possibleAnswers[3]}">${questions[questionNumber].possibleAnswers[3]}</li>`);
         }
 
