@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+p {
+    margin: 0;
+}
+nav {
+    background-color: darkgray;
+    position: fixed;
+    width: 100%;
+    min-height: 50px;
+}
+header {
+    background-color: white;
+    min-height: 200px;
+    display: inline-block;
+    padding-top:10%;
+}
+.bio {
+    background-color: lightgray;
+    min-height: 200px;
+}
+.projects {
+    background-color: gray;
+    min-height: 200px;
+}
+footer {
+    background-color: lightgray;
+    min-height: 50px;
+}
