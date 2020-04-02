@@ -1,35 +1,129 @@
 * {
     box-sizing: border-box;
+    width: 100%;
 }
 body {
-    text-align: center;
     margin: 0;
     padding: 0;
+    background-color: rgb(204, 231, 247);
+}
+a{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: white;
+}
+header {
+    background-color: rgb(204, 231, 247);
+    min-height: 200px;
+    display: flex;
+    padding-top:50px;
+    font-family: 'Raleway', sans-serif;
+    font-size:16px;
+    padding-left: 10px;
+}
+.navMenu {
+    display: none;
+}
+ul {
+    padding-top: 0px;
+    list-style-type: none;
+    margin: 0px;
+    margin-top: 0px;
+    align-items: center;
+    background-color: black;
+    color: rgb(204, 231, 247);
+    position: absolute;
+    top: 50px;
+    left: 0;
+
+}
+.web{
+    display: block;
+    padding-left: 17px;
+    padding-top: 20px;
+}
+.solve {
+    display: block;
+    padding-left: 32px;
+    padding-top: 20px;
 }
 h2 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    color: black;
+}
+h3 { 
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    color: black;
+}
+p {
+    font-family: 'Rubiik', sans-serif;
+    font-size: 16px;
     margin: 0;
 }
 nav {
-    background-color: darkgray;
+    background-color: black;
+    color: white;
     position: fixed;
     width: 100%;
     min-height: 50px;
+    display: flex;
+    text-align: start;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
 }
-header {
-    background-color: white;
-    min-height: 200px;
-    display: inline-block;
-    padding-top:50px;
+.fa-bars {
+    color: rgb(204, 231, 247);
+    padding-left: 2%;
 }
 .bio {
-    background-color: lightgray;
-    min-height: 200px;
+    background-color: rgb(204, 231, 247);
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .projects {
-    background-color: gray;
-    min-height: 200px;
+    background-color: rgb(204, 231, 247);
+    color: black;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+.bigScreen {
+    height: auto;
+    width: 60%;
+    padding-right: 10px;
+    float: left;
 }
 footer {
-    background-color: lightgray;
+    /* width: 100%; */
+    display: flex;
+    background-color: rgb(204, 231, 247);;
     min-height: 50px;
+    justify-items: flex-end;
+    align-items: center;
+}
+.email {
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+.github {
+    display: flex;
+    justify-content: center;
+} 
+.test {
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+}
+.git {
+    width: 32px;
+    height: 32px;
+}
+@media screen and (min-width: 480px) {
+    nav {
+    display: none;
+    }
 }
